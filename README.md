@@ -38,3 +38,15 @@ Week 1 - Balance Dashboard & Transaction List.
 
 ### Dashboard - Part 2
 ![Screenshot 2](screenshot2.png)
+
+
+## Week 2 – Add, Edit & Delete Transactions
+
+### Dashboard
+![WalletWave Dashboard](week2_dashboard.png)
+
+### Add Transaction
+![Add Transaction](week2_add_transaction.png)
+
+### Transaction Added
+![Transaction Added](week2_transaction_added.png)
