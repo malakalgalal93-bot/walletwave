@@ -50,3 +50,35 @@ Week 1 - Balance Dashboard & Transaction List.
 
 ### Transaction Added
 ![Transaction Added](week2_transaction_added.png)
+
+## Week 3 – Local Database & Monthly View
+
+### New Features
+
+- Local data storage using Hive.
+- TransactionRepository for database operations.
+- Transactions persist after closing and reopening the app.
+- Add, edit, and delete transactions from local storage.
+- Monthly transaction filtering.
+- Monthly income, expenses, and balance calculations.
+- Loading, empty, and error states.
+- Undo deleted transactions.
+
+### Technologies
+
+- Flutter
+- Dart
+- Hive
+- Hive Flutter
+- intl
+
+### Week 3 Screenshots
+
+#### Monthly View
+![Monthly View](week3_monthly_view.png)
+
+#### Empty Month
+![Empty Month](week3_empty_month.png)
+
+#### Data Persistence
+![Data Persistence](week3_persistence.png)

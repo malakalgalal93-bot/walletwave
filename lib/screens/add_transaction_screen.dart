@@ -1,22 +1,16 @@
-
 import 'package:flutter/material.dart';
 import '../models/transaction.dart';
 
 class AddTransactionScreen extends StatefulWidget {
   final Transaction? existingTransaction;
 
-  const AddTransactionScreen({
-    super.key,
-    this.existingTransaction,
-  });
+  const AddTransactionScreen({super.key, this.existingTransaction});
 
   @override
-  State<AddTransactionScreen> createState() =>
-      _AddTransactionScreenState();
+  State<AddTransactionScreen> createState() => _AddTransactionScreenState();
 }
 
-class _AddTransactionScreenState
-    extends State<AddTransactionScreen> {
+class _AddTransactionScreenState extends State<AddTransactionScreen> {
   final _formKey = GlobalKey<FormState>();
 
   late TextEditingController _titleController;
@@ -45,9 +39,7 @@ class _AddTransactionScreenState
 
     final transaction = widget.existingTransaction;
 
-    _titleController = TextEditingController(
-      text: transaction?.title ?? '',
-    );
+    _titleController = TextEditingController(text: transaction?.title ?? '');
 
     _amountController = TextEditingController(
       text: transaction?.amount.toString() ?? '',
@@ -86,6 +78,7 @@ class _AddTransactionScreenState
     }
 
     final newTransaction = Transaction(
+      id: widget.existingTransaction?.id,
       title: _titleController.text.trim(),
       amount: double.parse(_amountController.text.trim()),
       category: selectedCategory,
@@ -110,9 +103,7 @@ class _AddTransactionScreenState
             fontWeight: FontWeight.bold,
           ),
         ),
-        iconTheme: const IconThemeData(
-          color: Color(0xFF173D35),
-        ),
+        iconTheme: const IconThemeData(color: Color(0xFF173D35)),
         elevation: 0,
       ),
 
@@ -202,7 +193,7 @@ class _AddTransactionScreenState
               const SizedBox(height: 8),
 
               DropdownButtonFormField<String>(
-                value: selectedCategory,
+                initialValue: selectedCategory,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -234,12 +225,8 @@ class _AddTransactionScreenState
 
               SwitchListTile(
                 contentPadding: EdgeInsets.zero,
-                title: Text(
-                  isExpense ? 'Expense' : 'Income',
-                ),
-                subtitle: const Text(
-                  'Turn on for expense, off for income',
-                ),
+                title: Text(isExpense ? 'Expense' : 'Income'),
+                subtitle: const Text('Turn on for expense, off for income'),
                 value: isExpense,
                 activeThumbColor: const Color(0xFF173D35),
                 onChanged: (value) {
@@ -251,10 +238,7 @@ class _AddTransactionScreenState
 
               const SizedBox(height: 16),
 
-              const Text(
-                'Date',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
+              const Text('Date', style: TextStyle(fontWeight: FontWeight.bold)),
 
               const SizedBox(height: 8),
 
